@@ -10,18 +10,18 @@ interface ISiteMetadataResult {
 }
 
 const data: ISiteMetadataResult = {
-  siteTitle: 'Running Page',
-  siteUrl: 'https://yihong.run',
+  siteTitle: 'Lolipop\'s Running Page',
+  siteUrl: 'https://run.towind.fun',
   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
-  description: 'Personal site and blog',
+  description: 'Lolipop\'s personal site that records running histories',
   navLinks: [
     {
       name: 'Blog',
-      url: 'https://github.com/yihong0618/gitblog',
+      url: 'https://blog.towind.fun',
     },
     {
-      name: 'About',
-      url: 'https://github.com/yihong0618/running_page/blob/master/README-CN.md',
+      name: 'Github',
+      url: 'https://github.com/LolipopJ',
     },
   ],
 };
