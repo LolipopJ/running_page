@@ -13,7 +13,7 @@ const data: ISiteMetadataResult = {
   siteTitle: 'Lolipop\'s Running Page',
   siteUrl: 'https://run.towind.fun',
   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
-  description: 'Lolipop\'s personal site that records running histories',
+  description: 'Lolipop\'s personal site that records sport activities',
   navLinks: [
     {
       name: 'Blog',
