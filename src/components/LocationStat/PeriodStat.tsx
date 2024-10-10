@@ -19,7 +19,7 @@ const PeriodStat = ({ onClick }: { onClick: (_period: string) => void }) => {
           />
         ))}
       </section>
-      <hr color="blanchedalmond" />
+      <hr color="#ffebcd" />
     </div>
   );
 };
