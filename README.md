@@ -103,7 +103,10 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 | [laqieer](https://github.com/laqieer)             | <https://laqieer.github.io/running_page/>      | Strava      |
 | [Guoxin](https://github.com/guoxinl)              | <https://running.guoxin.space/>                | Strava      |
 | [laihj](https://github.com/laihj)                 | <https://run.laihjx.com/>                      | 苹果健身     |
-| [Ginta](https://github.com/mar-heaven)            | <https://running.ginta.top/>                   | Keep         |
+| [Ginta](https://github.com/mar-heaven)            | <https://running.ginta.top/>                   | Keep        |
+| [Samuel](https://github.com/SamuelDixxon)         | <https://samueldixxon.github.io/running_page/> | Keep        |
+| [Evan](https://github.com/LinghaoChan)            | <https://github.com/LinghaoChan/running>       | Keep        |
+| [Shuqi](https://github.com/zhufengme)             | <https://runner-shuqi.devlink.cn/>             | Garmin      |
 </details>
 
 ## How it works
@@ -148,7 +151,7 @@ Clone or fork the repo.
 git clone https://github.com/yihong0618/running_page.git --depth=1
 ```
 
-## Installation and testing (node >= 16 python >= 3.8)
+## Installation and testing (node >= 20 python >= 3.11)
 
 ```bash
 pip3 install -r requirements.txt
@@ -232,9 +235,11 @@ const USE_DASH_LINE = true;
 const LINE_OPACITY = 0.4;
 // styling: set to `true` if you want to display only the routes without showing the map
 // Note: This config only affects the page display; please refer to "privacy protection" below for data protection
-const PRIVACY_MODE = false;
+// update for now 2024/11/17 the privacy mode is true
+const PRIVACY_MODE = true;
+// update for now 2024/11/17 the lights on default is false
 // styling: set to `false` if you want to make light off as default, only effect when `PRIVACY_MODE` = false
-const LIGHTS_ON = true;
+const LIGHTS_ON = false;
 ```
 
 - To use Google Analytics, you need to modify the configuration in the `src/utils/const.ts` file.
@@ -847,7 +852,7 @@ For more display effects, see:
 
 5. Scroll down, click `Environment variables (advanced)`, then add a variable like the below:
 
-   > Variable name = `PYTHON_VERSION`, Value = `3.7`
+   > Variable name = `PYTHON_VERSION`, Value = `3.11`
 
 6. Click `Save and Deploy`
 

@@ -106,6 +106,8 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 | [laqieer](https://github.com/laqieer)             | <https://laqieer.github.io/running_page/>      | Strava      |
 | [Guoxin](https://github.com/guoxinl)              | <https://running.guoxin.space/>                | Strava      |
 | [Darren](https://github.com/Flavored4179)         | <https://run.wdoc.top/>                        | tcx         |
+| [Evan](https://github.com/LinghaoChan)            | <https://github.com/LinghaoChan/running>       | Keep        |
+| [Shuqi](https://github.com/zhufengme)            | <https://runner-shuqi.devlink.cn/>       | Garmin |
 </details>
 
 ## 它是怎么工作的
@@ -166,7 +168,7 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 git clone https://github.com/yihong0618/running_page.git --depth=1
 ```
 
-## 安装及测试 (node >= 16 python >= 3.8)
+## 安装及测试 (node >= 20 python >= 3.11)
 
 ```bash
 pip3 install -r requirements.txt
@@ -246,11 +248,13 @@ siteMetadata: {
 const USE_DASH_LINE = true;
 // styling: 透明度：[0, 1]
 const LINE_OPACITY = 0.4;
+// update for now 2024/11/17 the privacy mode is true
 // styling: 开启隐私模式(不显示地图仅显示轨迹): 设置为 `true`
 // 注意：此配置仅影响页面显示，数据保护请参考下方的 "隐私保护"
-const PRIVACY_MODE = false;
+const PRIVACY_MODE = true;
+// update for now 2024/11/17 the lights on default is false
 // styling: 默认关灯: 设置为 `false`, 仅在隐私模式关闭时生效(`PRIVACY_MODE` = false)
-const LIGHTS_ON = true;
+const LIGHTS_ON = false;
 ```
 
 > 隐私保护：设置下面环境变量：
@@ -1069,7 +1073,7 @@ python3(python) run_page/gen_svg.py --from-db --type circular --use-localtime
 
 5. 下滑点击 `环境变量 (高级)`，并添加一个如下的变量：
 
-   > 变量名称 = `PYTHON_VERSION`, 值 = `3.8`
+   > 变量名称 = `PYTHON_VERSION`, 值 = `3.11`
 
 6. 点击 `保存并部署`，完成部署。
 
