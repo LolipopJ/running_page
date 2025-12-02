@@ -9,12 +9,21 @@ interface ISiteMetadataResult {
   }[];
 }
 
+const getBasePath = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+  return baseUrl === '/' ? '' : baseUrl;
+};
+
 const data: ISiteMetadataResult = {
   siteTitle: 'Lolipop\'s Running Page',
   siteUrl: 'https://run.towind.fun',
   logo: 'https://blog.towind.fun/static/avatar/avatar.png',
   description: 'Lolipop\'s personal site that records sport activities',
   navLinks: [
+    {
+      name: 'Summary',
+      url: `${getBasePath()}/summary`,
+    },
     {
       name: 'Blog',
       url: 'https://blog.towind.fun',

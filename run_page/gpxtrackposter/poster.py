@@ -47,10 +47,10 @@ class Poster:
         self.length_range_by_date = None
         self.units = "metric"
         self.colors = {
-            "background": "#222222",
-            "text": "#FFFFFF",
-            "special": "#FFFF00",
-            "track": "#4DD2FF",
+            "background": "#1a1a1a",
+            "text": "#61bfad",
+            "special": "#61bfad",
+            "track": "#ffebcd",
         }
         self.special_distance = {"special_distance": 10, "special_distance2": 20}
         self.width = 200
@@ -111,10 +111,6 @@ class Poster:
         width = self.width
         if self.drawer_type == "plain":
             height = height - 100
-            self.colors["background"] = "#1a1a1a"
-            self.colors["track"] = "#ffebcd"
-            self.colors["special"] = "#61bfad"
-            self.colors["text"] = "#61bfad"
         d = svgwrite.Drawing(output, (f"{width}mm", f"{height}mm"))
         d.viewbox(0, 0, self.width, height)
         d.add(d.rect((0, 0), (width, height), fill=self.colors["background"]))
@@ -169,7 +165,7 @@ class Poster:
 
         d.add(
             d.text(
-                self.trans("ATHLETE"),
+                self.trans("Runner"),
                 insert=(10, self.height - 20),
                 fill=text_color,
                 style=header_style,
@@ -183,37 +179,41 @@ class Poster:
                 style=value_style,
             )
         )
-
-        d.add(
-            d.text(
-                self.trans("SPECIAL TRACKS"),
-                insert=(65, self.height - 20),
-                fill=text_color,
-                style=header_style,
+        if self.drawer_type != "monthoflife":
+            d.add(
+                d.text(
+                    self.trans("SPECIAL TRACKS"),
+                    insert=(65, self.height - 20),
+                    fill=text_color,
+                    style=header_style,
+                )
             )
-        )
 
-        d.add(d.rect((65, self.height - 17), (2.6, 2.6), fill=self.colors["special"]))
-
-        d.add(
-            d.text(
-                f"Over {special_distance1:.1f} km",
-                insert=(70, self.height - 14.5),
-                fill=text_color,
-                style=small_value_style,
+            d.add(
+                d.rect((65, self.height - 17), (2.6, 2.6), fill=self.colors["special"])
             )
-        )
 
-        d.add(d.rect((65, self.height - 13), (2.6, 2.6), fill=self.colors["special2"]))
-
-        d.add(
-            d.text(
-                f"Over {special_distance2:.1f} km",
-                insert=(70, self.height - 10.5),
-                fill=text_color,
-                style=small_value_style,
+            d.add(
+                d.text(
+                    f"Over {special_distance1:.1f} km",
+                    insert=(70, self.height - 14.5),
+                    fill=text_color,
+                    style=small_value_style,
+                )
             )
-        )
+
+            d.add(
+                d.rect((65, self.height - 13), (2.6, 2.6), fill=self.colors["special2"])
+            )
+
+            d.add(
+                d.text(
+                    f"Over {special_distance2:.1f} km",
+                    insert=(70, self.height - 10.5),
+                    fill=text_color,
+                    style=small_value_style,
+                )
+            )
 
         d.add(
             d.text(
