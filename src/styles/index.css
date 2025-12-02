@@ -29,8 +29,8 @@
 /* 1. System Theme (Base) */
 @media (prefers-color-scheme: light) {
   :root {
-    --color-brand: var(--color-sky-900);
-    --color-secondary: var(--color-sky-800);
+    --color-brand: #61bfad;
+    --color-secondary: #81bce0;
     --color-bg: var(--color-neutral-100);
     --color-tx: var(--color-sky-900);
     --color-hr: var(--color-neutral-300);
@@ -49,12 +49,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* const nike = 'rgb(224,237,94)'; */
-    --color-brand: #e0ed5e;
-    --color-secondary: #ccd94a;
+    --color-brand: #61bfad;
+    --color-secondary: #81bce0;
     --color-bg: var(--color-neutral-900);
     --color-tx: var(--color-brand);
-    --color-hr: var(--color-red-500);
+    --color-hr: #ffebcd;
     --color-selected: var(--color-brand);
     --color-run-date: var(--color-neutral-300);
     --color-run-table-thead: var(--color-zinc-300);
@@ -70,8 +69,8 @@
 
 /* 2. Manual Override (Higher Priority) */
 [data-theme='light'] {
-  --color-brand: var(--color-sky-900);
-  --color-secondary: var(--color-sky-800);
+  --color-brand: #61bfad;
+  --color-secondary: #81bce0;
   --color-bg: var(--color-neutral-100);
   --color-tx: var(--color-sky-900);
   --color-hr: var(--color-neutral-300);
@@ -89,12 +88,11 @@
 }
 
 [data-theme='dark'] {
-  /* const nike = 'rgb(224,237,94)'; */
-  --color-brand: #e0ed5e;
-  --color-secondary: #ccd94a;
+  --color-brand: #61bfad;
+  --color-secondary: #81bce0;
   --color-bg: var(--color-neutral-900);
   --color-tx: var(--color-brand);
-  --color-hr: var(--color-red-500);
+  --color-hr: #ffebcd;
   --color-selected: var(--color-brand);
   --color-run-date: var(--color-neutral-300);
   --color-run-table-thead: var(--color-zinc-300);
