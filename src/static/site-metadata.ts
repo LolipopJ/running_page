@@ -16,7 +16,7 @@ const getBasePath = () => {
 
 const data: ISiteMetadataResult = {
   siteTitle: 'Lolipop\'s Running Page',
-  siteUrl: 'https://run.towind.fun',
+  siteUrl: 'https://run.towind.cn',
   logo: 'https://raw.githubusercontent.com/LolipopJ/LolipopJ.github.io/refs/heads/legacy-hexo-source/source/static/avatar/avatar.png',
   description: 'Lolipop\'s personal site that records sport activities',
   navLinks: [
@@ -26,7 +26,7 @@ const data: ISiteMetadataResult = {
     },
     {
       name: 'Blog',
-      url: 'https://blog.towind.fun',
+      url: 'https://blog.towind.cn',
     },
     {
       name: 'Github',
