@@ -2,7 +2,7 @@ import datetime
 import random
 import string
 
-from geopy.geocoders import options, Nominatim
+from geopy.geocoders import Nominatim, options
 from sqlalchemy import (
     Column,
     Float,
@@ -110,7 +110,9 @@ def update_or_create_activity(session, run_activity):
                 try:
                     location_country = str(
                         g.reverse(
-                            f"{start_point.lat}, {start_point.lon}", language="zh-CN"  # type: ignore
+                            f"{start_point.lat}, {start_point.lon}",
+                            language="zh-CN",  # type: ignore
+                            timeout=15,
                         )
                     )
                 # limit (only for the first time)
@@ -120,6 +122,7 @@ def update_or_create_activity(session, run_activity):
                             g.reverse(
                                 f"{start_point.lat}, {start_point.lon}",
                                 language="zh-CN",  # type: ignore
+                                timeout=15,
                             )
                         )
                     except Exception:

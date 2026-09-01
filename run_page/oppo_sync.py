@@ -11,18 +11,17 @@ from xml.dom import minidom
 import gpxpy
 import polyline
 import requests
-from tzlocal import get_localzone
-
 from config import (
     GPX_FOLDER,
     JSON_FILE,
     SQL_FILE,
-    run_map,
-    start_point,
     TCX_FOLDER,
     UTC_TIMEZONE,
+    run_map,
+    start_point,
 )
 from generator import Generator
+from tzlocal import get_localzone
 from utils import adjust_time
 
 TOKEN_REFRESH_URL = "https://sport.health.heytapmobi.com/open/v1/oauth/token"
@@ -228,7 +227,11 @@ def parse_raw_data_to_name_tuple(sport_data, with_gpx, with_tcx):
         "name": "activity from oppo",
         # future to support others workout now only for run
         "type": map_oppo_fit_type_to_strava_activity_type(sport_data["sportMode"]),
-        "subtype": map_oppo_fit_type_to_strava_activity_type(sport_data["sportMode"]),
+        "subtype": (
+            "indoor"
+            if sport_data["sportMode"] in AVAILABLE_INDOOR_SPORT_MODE
+            else map_oppo_fit_type_to_strava_activity_type(sport_data["sportMode"])
+        ),
         "start_date": datetime.strftime(start_date, "%Y-%m-%d %H:%M:%S"),
         "end": datetime.strftime(end, "%Y-%m-%d %H:%M:%S"),
         "start_date_local": datetime.strftime(start_date_local, "%Y-%m-%d %H:%M:%S"),

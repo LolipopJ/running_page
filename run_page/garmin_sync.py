@@ -8,18 +8,20 @@ import asyncio
 import datetime as dt
 import logging
 import os
+
+os.environ["GARTH_TELEMETRY_ENABLED"] = "false"
 import sys
 import time
 import traceback
 import zipfile
 from io import BytesIO
-from lxml import etree
 
 import aiofiles
 import garth
 import httpx
 from config import FOLDER_DICT, JSON_FILE, SQL_FILE
 from garmin_device_adaptor import process_garmin_data
+from lxml import etree
 from utils import make_activities_file
 
 # logging.basicConfig(level=logging.DEBUG)
